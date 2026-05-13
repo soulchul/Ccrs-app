@@ -24,8 +24,46 @@ jobs:
       - name: Create icon
         run: |
           pip install pillow -q
-          echo "ZnJvbSBQSUwgaW1wb3J0IEltYWdlLCBJbWFnZURyYXcsIEltYWdlRm9udAppbXBvcnQgbWF0aApTSVpFID0gNTEyCmltZyA9IEltYWdlLm5ldygnUkdCQScsIChTSVpFLCBTSVpFKSwgKDAsMCwwLDApKQpkcmF3ID0gSW1hZ2VEcmF3LkRyYXcoaW1nKQpPUkFOR0UgPSAoMjQwLDEyMCwwLDI1NSkKV0hJVEUgPSAoMjU1LDI1NSwyNTUsMjU1KQpEQVJLID0gKDUwLDQ1LDQyLDI1NSkKciA9IDEwMAp4MCx5MCx4MSx5MSA9IDAsMCxTSVpFLFNJWkUKZHJhdy5yZWN0YW5nbGUoW3gwK3IseTAseDEtcix5MV0sZmlsbD1PUkFOR0UpCmRyYXcucmVjdGFuZ2xlKFt4MCx5MCtyLHgxLHkxLXJdLGZpbGw9T1JBTkdFKQpkcmF3LmVsbGlwc2UoW3gwLHkwLHgwK3IqMix5MCtyKjJdLGZpbGw9T1JBTkdFKQpkcmF3LmVsbGlwc2UoW3gxLXIqMix5MCx4MSx5MCtyKjJdLGZpbGw9T1JBTkdFKQpkcmF3LmVsbGlwc2UoW3gwLHkxLXIqMix4MCtyKjIseTFdLGZpbGw9T1JBTkdFKQpkcmF3LmVsbGlwc2UoW3gxLXIqMix5MS1yKjIseDEseTFdLGZpbGw9T1JBTkdFKQpjeCxjeSA9IFNJWkUvLzIsIFNJWkUvLzItMzAKYXJjX3IsYXJjX3cgPSAxMzAsNTIKZHJhdy5lbGxpcHNlKFtjeC1hcmNfcixjeS1hcmNfcixjeStrYXJjX3IsY3krYXJjX3JdLG91dGxpbmU9V0hJVEUsd2lkdGg9YXJjX3cpCmN1dCA9IEltYWdlLm5ldygnUkdCQScsKFNJWkUsU0laRSksKDAsMCwwLDApKQpjdXRfZHJhdyA9IEltYWdlRHJhdy5EcmF3KGN1dCkKY3V0X2RyYXcucGllc2xpY2UoW2N4LWFyY19yLWFyY193LGN5LWFyY19yLWFyY193LGN4K2FyY19yK2FyY193LGN5K2FyY19yK2FyY193XSxzdGFydD0tNjAsZW5kPTMwLGZpbGw9T1JBTkdFKQppbWcgPSBJbWFnZS5hbHBoYV9jb21wb3NpdGUoaW1nLGN1dCkKZHJhdyA9IEltYWdlRHJhdy5EcmF3KGltZykKZG90X3IgPSA1OApkcmF3LmVsbGlwc2UoW2N4LWRvdF9yLGN5LWRvdF9yKzUsY3grZG90X3IsY3krZG90X3IrNV0sZmlsbD1XSElURSkKdHJ5OgogICAgZm9udCA9IEltYWdlRm9udC50cnVldHlwZSgiL3Vzci9zaGFyZS9mb250cy90cnVldHlwZS9kZWphdnUvRGVqYVZ1U2Fucy1Cb2xkLnR0ZiIsODgpCmV4Y2VwdDoKICAgIGZvbnQgPSBJbWFnZUZvbnQubG9hZF9kZWZhdWx0KCkKYmJveCA9IGRyYXcudGV4dGJib3goKDAsMCksIkNDUlMiLGZvbnQ9Zm9udCkKdHcsdGggPSBiYm94WzJdLWJib3hbMF0sYmJveFszXS1iYm94WzFdCmRyYXcudGV4dCgoKFNJWkUtdHcpLy8yLFNJWkUtdGgtNTUpLCJDQ1JTIixmb250PWZvbnQsZmlsbD1EQVJLKQppbWcucmVzaXplKCgxOTIsMTkyKSxJbWFnZS5MQU5DWk9TKS5zYXZlKCJpY19sYXVuY2hlci5wbmciKQppbWcuc2F2ZSgiaWNvbi5wbmciKQpwcmludCgiZG9uZSIp" | base64 -d > make_icon.py
-          python3 make_icon.py
+          python3 - << 'PYEOF'
+          from PIL import Image, ImageDraw, ImageFont
+          import math, base64, os
+
+          SIZE = 512
+          img = Image.new('RGBA', (SIZE, SIZE), (0,0,0,0))
+          draw = ImageDraw.Draw(img)
+          ORANGE = (240,120,0,255)
+          WHITE = (255,255,255,255)
+          DARK = (50,45,42,255)
+          r = 100
+          x0,y0,x1,y1 = 0,0,SIZE,SIZE
+          draw.rectangle([x0+r,y0,x1-r,y1],fill=ORANGE)
+          draw.rectangle([x0,y0+r,x1,y1-r],fill=ORANGE)
+          draw.ellipse([x0,y0,x0+r*2,y0+r*2],fill=ORANGE)
+          draw.ellipse([x1-r*2,y0,x1,y0+r*2],fill=ORANGE)
+          draw.ellipse([x0,y1-r*2,x0+r*2,y1],fill=ORANGE)
+          draw.ellipse([x1-r*2,y1-r*2,x1,y1],fill=ORANGE)
+          cx,cy = SIZE//2, SIZE//2-30
+          arc_r,arc_w = 130,52
+          draw.ellipse([cx-arc_r,cy-arc_r,cx+arc_r,cy+arc_r],outline=WHITE,width=arc_w)
+          cut = Image.new('RGBA',(SIZE,SIZE),(0,0,0,0))
+          cut_draw = ImageDraw.Draw(cut)
+          cut_draw.pieslice([cx-arc_r-arc_w,cy-arc_r-arc_w,cx+arc_r+arc_w,cy+arc_r+arc_w],start=-60,end=30,fill=ORANGE)
+          img = Image.alpha_composite(img,cut)
+          draw = ImageDraw.Draw(img)
+          dot_r = 58
+          draw.ellipse([cx-dot_r,cy-dot_r+5,cx+dot_r,cy+dot_r+5],fill=WHITE)
+          try:
+              font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",88)
+          except:
+              font = ImageFont.load_default()
+          bbox = draw.textbbox((0,0),"CCRS",font=font)
+          tw,th = bbox[2]-bbox[0],bbox[3]-bbox[1]
+          draw.text(((SIZE-tw)//2,SIZE-th-55),"CCRS",font=font,fill=DARK)
+          icon192 = img.resize((192,192),Image.LANCZOS)
+          icon192.save("ic_launcher.png")
+          img.save("icon.png")
+          print("아이콘 생성 완료")
+          PYEOF
 
       - name: Setup project structure
         run: |
