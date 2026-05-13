@@ -40,6 +40,7 @@ jobs:
           echo "cGx1Z2lucyB7IGlkICdjb20uYW5kcm9pZC5hcHBsaWNhdGlvbicgfQphbmRyb2lkIHsKICAgIG5hbWVzcGFjZSAnY29tLmNyZWRpdHJlY292ZXJ5LmFwcCcKICAgIGNvbXBpbGVTZGsgMzQKICAgIGRlZmF1bHRDb25maWcgewogICAgICAgIGFwcGxpY2F0aW9uSWQgImNvbS5jcmVkaXRyZWNvdmVyeS5hcHAiCiAgICAgICAgbWluU2RrIDI0CiAgICAgICAgdGFyZ2V0U2RrIDM0CiAgICAgICAgdmVyc2lvbkNvZGUgMQogICAgICAgIHZlcnNpb25OYW1lICIxLjAiCiAgICB9CiAgICBidWlsZFR5cGVzIHsgcmVsZWFzZSB7IG1pbmlmeUVuYWJsZWQgZmFsc2UgfSB9CiAgICBjb21waWxlT3B0aW9ucyB7CiAgICAgICAgc291cmNlQ29tcGF0aWJpbGl0eSBKYXZhVmVyc2lvbi5WRVJTSU9OXzFfOAogICAgICAgIHRhcmdldENvbXBhdGliaWxpdHkgSmF2YVZlcnNpb24uVkVSU0lPTl8xXzgKICAgIH0KfQpkZXBlbmRlbmNpZXMgeyBpbXBsZW1lbnRhdGlvbiAnYW5kcm9pZHguYXBwY29tcGF0OmFwcGNvbXBhdDoxLjYuMScgfQo=" | base64 -d > app/build.gradle
           echo "aW5jbHVkZSAnOmFwcCcK" | base64 -d > settings.gradle
           echo "PHJlc291cmNlcz48c3R5bGUgbmFtZT0iQXBwVGhlbWUiIHBhcmVudD0iVGhlbWUuQXBwQ29tcGF0LkxpZ2h0Lk5vQWN0aW9uQmFyIj48aXRlbSBuYW1lPSJjb2xvclByaW1hcnkiPiMxYTVmYTg8L2l0ZW0+PC9zdHlsZT48L3Jlc291cmNlcz4K" | base64 -d > app/src/main/res/values/styles.xml
+          echo "YW5kcm9pZC51c2VBbmRyb2lkWD10cnVlCmFuZHJvaWQuZW5hYmxlSmV0aWZpZXI9dHJ1ZQo=" | base64 -d > gradle.properties
 
       - name: Build APK
         run: gradle assembleDebug --no-daemon
