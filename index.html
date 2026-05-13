@@ -19,7 +19,6 @@ html,body{width:100%;height:100%;overflow:hidden;}
 .screen.active{display:flex;}
 .top-header{background:#f07800;padding:14px 16px 12px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
 .logo-text{color:#fff;font-size:16px;font-weight:700;}
-.menu-icon{color:#fff;font-size:22px;cursor:pointer;}
 .back-btn{color:#fff;font-size:24px;cursor:pointer;background:none;border:none;padding:0 4px;line-height:1;}
 .scroll-body{overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;}
 .payment-card{background:#f07800;padding:0 12px 12px;}
@@ -59,7 +58,6 @@ html,body{width:100%;height:100%;overflow:hidden;}
 .repay-table .th2{background:#eaf0f8;color:#f07800;}
 .repay-note{font-size:11px;color:#555;margin-top:9px;padding:0 2px;line-height:1.7;}
 .repay-note.red{color:#c00;}
-/* 모달 */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);align-items:center;justify-content:center;z-index:999;}
 .modal-overlay.show{display:flex;}
 .modal-box{background:#fff;border-radius:14px;width:82%;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.25);}
@@ -69,14 +67,12 @@ html,body{width:100%;height:100%;overflow:hidden;}
 .modal-body{padding:20px 20px 26px;}
 .modal-body p{font-size:15px;color:#333;line-height:2.1;}
 .amt-hl{font-weight:700;font-size:16px;color:#c00;}
-/* 회차별 모달 */
 .schedule-modal-box{background:#fff;border-radius:14px;width:92%;max-height:80vh;overflow:hidden;display:flex;flex-direction:column;}
 .sch-table{width:100%;border-collapse:collapse;}
 .sch-table th{background:#f5f5f5;color:#555;padding:9px 5px;text-align:center;border:1px solid #ddd;font-weight:600;font-size:12px;}
 .sch-table td{padding:8px 5px;text-align:center;border:1px solid #eee;color:#333;font-size:12px;}
 .sch-table tr:nth-child(even) td{background:#fafafa;}
 .sch-more-btn{display:block;margin:14px auto 6px;background:#555;color:#fff;border:none;border-radius:7px;padding:11px 30px;font-size:14px;cursor:pointer;}
-/* 자동이체 */
 .page-bg{background:#fff;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 .tab-row{display:flex;border-bottom:2px solid #eee;flex-shrink:0;}
 .tab-item{flex:1;text-align:center;padding:12px 0;font-size:14px;color:#999;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;}
@@ -99,7 +95,6 @@ html,body{width:100%;height:100%;overflow:hidden;}
 .acc-hd.open .acc-arr{transform:rotate(180deg);}
 .acc-body{background:#fafafa;border-top:1px solid #eee;padding:12px 14px;font-size:13px;color:#666;}
 .emsg{text-align:center;color:#aaa;font-size:13px;padding:18px 0;}
-/* 납입내역 */
 .ledger-wrap{background:#fff;flex:1;overflow-y:auto;padding:0 0 24px;-webkit-overflow-scrolling:touch;}
 .ledger-title{font-size:17px;font-weight:700;text-align:center;padding:18px 0 13px;color:#111;border-bottom:1px solid #eee;}
 .ledger-body{padding:14px 14px;}
@@ -125,7 +120,6 @@ html,body{width:100%;height:100%;overflow:hidden;}
 .tx-out{color:#e00;font-weight:600;}
 .tx-zero{color:#999;}
 .more-btn{display:block;margin:16px auto 0;background:#fff;border:1px solid #aaa;border-radius:22px;padding:10px 28px;font-size:13px;color:#444;cursor:pointer;}
-/* 납입약속 */
 .promise-wrap{background:#fff;flex:1;overflow-y:auto;padding-bottom:28px;-webkit-overflow-scrolling:touch;}
 .promise-title{font-size:17px;font-weight:700;text-align:center;padding:20px 0 16px;color:#111;}
 .promise-body{padding:0 20px;}
@@ -137,7 +131,6 @@ html,body{width:100%;height:100%;overflow:hidden;}
 .ptab{flex:1;border:1px solid #ccc;border-radius:7px;padding:12px 0;text-align:center;font-size:14px;color:#555;cursor:pointer;background:#fff;}
 .ptab.active{border-color:#f07800;color:#f07800;font-weight:700;}
 .promise-reg-btn{display:block;width:100%;background:#f07800;color:#fff;border:none;border-radius:10px;padding:15px 0;font-size:15px;font-weight:700;cursor:pointer;}
-/* 약속일자 등록 */
 .regdate-wrap{background:#fff;flex:1;overflow-y:auto;padding-bottom:28px;-webkit-overflow-scrolling:touch;}
 .regdate-title{font-size:17px;font-weight:700;text-align:center;padding:20px 0 12px;color:#111;}
 .regdate-body{padding:0 14px;}
@@ -167,7 +160,6 @@ html,body{width:100%;height:100%;overflow:hidden;}
 .cnrow::before{content:"▶";font-size:9px;color:#555;margin-top:3px;}
 .promise-final-btn{display:block;width:100%;background:#f07800;color:#fff;border:none;border-radius:10px;padding:15px 0;font-size:15px;font-weight:700;cursor:pointer;}
 .promise-final-btn:disabled{background:#aaa;}
-/* 상환일정표 */
 .schedule-wrap{background:#fff;flex:1;overflow-y:auto;padding-bottom:28px;-webkit-overflow-scrolling:touch;}
 .schedule-page-title{font-size:18px;font-weight:700;text-align:center;padding:20px 0 16px;color:#111;border-bottom:1px solid #eee;}
 .schedule-body{padding:16px 14px;}
@@ -183,8 +175,6 @@ html,body{width:100%;height:100%;overflow:hidden;}
 .debt-table td{padding:8px 4px;text-align:center;border:1px solid #ddd;color:#222;font-size:12px;}
 .debt-table .total-cell{font-weight:700;color:#111;}
 .schedule-main-btn{display:block;margin:4px auto 0;background:#555;color:#fff;border:none;border-radius:7px;padding:13px 32px;font-size:14px;font-weight:700;cursor:pointer;}
-
-/* ══ 잠금화면 ══ */
 .lock-screen{display:none;flex-direction:column;align-items:center;justify-content:center;height:100vh;background:#f07800;position:absolute;top:0;left:0;width:100%;z-index:9999;}
 .lock-screen.active{display:flex;}
 .lock-icon{width:100px;height:100px;border-radius:22px;object-fit:cover;margin-bottom:20px;box-shadow:0 4px 16px rgba(0,0,0,0.3);}
@@ -232,17 +222,16 @@ html,body{width:100%;height:100%;overflow:hidden;}
   <div class="pin-error" id="pin-error"></div>
 </div>
 
-
-<!-- ══ 메인 ══ -->
+<!-- 메인 -->
 <div class="screen" id="sc-main">
-  <div class="top-header"><span class="logo-text">신용회복위원회</span><span class="menu-icon">&#9776;</span></div>
+  <div class="top-header"><span class="logo-text">신용회복위원회</span></div>
   <div class="scroll-body">
     <div class="payment-card">
       <div class="payment-inner">
         <div style="font-size:12px;color:#555;margin-bottom:6px;">04월 납입금액 안내</div>
         <div class="month-badge-row"><span class="month-badge">04/25</span><span class="amount">4,052,333원</span></div>
         <div class="sub-info">자동이체를 등록해주세요.<br>변제금 납입 가상계좌 : <span>기업은행 003-328906-93-196</span></div>
-        <div class="pay-date">매월 <b>25일</b> 출금 (전국부속시 3~4일 후 재인출)</div>
+        <div class="pay-date">매월 <b>25일</b> 출금 (잔액 부족 시 3~4일 후 재인출)</div>
       </div>
     </div>
     <div class="notice-box">
@@ -291,7 +280,7 @@ html,body{width:100%;height:100%;overflow:hidden;}
   <div class="modal-overlay" id="modal-readjust" onclick="handleOverlay(event,'modal-readjust')"><div class="modal-box"><div class="modal-header"><span style="width:22px;"></span><span class="modal-title">재조정 상담 신청</span><button class="modal-close" onclick="closeModal('modal-readjust')">&#10005;</button></div><div class="modal-body"><p><b>백기철</b> 귀하 께서는 재조정 상담 신청 대상자가 아닙니다.</p></div></div></div>
 </div>
 
-<!-- ══ 자동이체 ══ -->
+<!-- 자동이체 -->
 <div class="screen" id="sc-auto">
   <div class="top-header"><button class="back-btn" onclick="goTo('sc-main')">&#8249;</button><span class="logo-text" style="flex:1;text-align:center;">자동이체 계좌 목록</span><span style="width:28px;"></span></div>
   <div class="page-bg">
@@ -306,7 +295,7 @@ html,body{width:100%;height:100%;overflow:hidden;}
   </div>
 </div>
 
-<!-- ══ 납입내역 ══ -->
+<!-- 납입내역 -->
 <div class="screen" id="sc-ledger">
   <div class="top-header"><button class="back-btn" onclick="goTo('sc-main')">&#8249;</button><span class="logo-text" style="flex:1;text-align:center;">납입내역 조회</span><span style="width:28px;"></span></div>
   <div class="ledger-wrap"><div class="ledger-title">입출금 거래 기록 조회</div>
@@ -326,7 +315,7 @@ html,body{width:100%;height:100%;overflow:hidden;}
   </div>
 </div>
 
-<!-- ══ 납입약속 ══ -->
+<!-- 납입약속 -->
 <div class="screen" id="sc-promise">
   <div class="top-header"><button class="back-btn" onclick="goTo('sc-main')">&#8249;</button><span class="logo-text" style="flex:1;text-align:center;">납입약속일 안내</span><span style="width:28px;"></span></div>
   <div class="promise-wrap"><div class="promise-title">납입약속일 안내</div>
@@ -338,7 +327,7 @@ html,body{width:100%;height:100%;overflow:hidden;}
   </div>
 </div>
 
-<!-- ══ 약속일자 등록 ══ -->
+<!-- 약속일자 등록 -->
 <div class="screen" id="sc-regdate">
   <div class="top-header"><button class="back-btn" onclick="goTo('sc-promise')">&#8249;</button><span class="logo-text" style="flex:1;text-align:center;">약속일자 등록</span><span style="width:28px;"></span></div>
   <div class="regdate-wrap"><div class="regdate-title">약속일자 등록</div>
@@ -348,14 +337,14 @@ html,body{width:100%;height:100%;overflow:hidden;}
       <button class="rearrange-btn">재조정 신청하기</button>
       <div class="cal-nav"><button class="cal-nav-btn" onclick="calPrev()">&#8249;</button><span class="cal-month-label" id="cal-label">2026.04</span><button class="cal-nav-btn" onclick="calNext()">&#8250;</button></div>
       <div class="cal-grid" id="cal-grid"></div>
-      <div class="cal-legend"><div class="leg-item"><div class="leg-dot" style="background:#f0f0f0;border:1px solid #ddd;"></div><span>예약가눔</span></div><div class="leg-item"><div class="leg-dot" style="background:#fff;border:1px solid #ddd;"></div><span>예약불가</span></div><div class="leg-item"><div class="leg-dot" style="background:#f07800;border-radius:50%;"></div><span>현재선택</span></div></div>
+      <div class="cal-legend"><div class="leg-item"><div class="leg-dot" style="background:#f0f0f0;border:1px solid #ddd;"></div><span>예약가능</span></div><div class="leg-item"><div class="leg-dot" style="background:#fff;border:1px solid #ddd;"></div><span>예약불가</span></div><div class="leg-item"><div class="leg-dot" style="background:#f07800;border-radius:50%;"></div><span>현재선택</span></div></div>
       <div class="cal-notes"><div class="cnrow">약속일은 최대 한달 이내로 설정할 수 있습니다.</div><div class="cnrow">미납금액은 가상계좌로 입금하시기 바랍니다.</div><div class="cnrow">상환예상일까지 미납이 지속되면 채무조정 포인트 상실될 수 있습니다.</div></div>
       <button class="promise-final-btn" id="reg-final-btn" onclick="registerDate()" disabled>약속일자 등록</button>
     </div>
   </div>
 </div>
 
-<!-- ══ 상환일정표 ══ -->
+<!-- 상환일정표 -->
 <div class="screen" id="sc-schedule">
   <div class="top-header"><button class="back-btn" onclick="goTo('sc-main')">&#8249;</button><span class="logo-text" style="flex:1;text-align:center;">상환일정표</span><span style="width:28px;"></span></div>
   <div class="schedule-wrap"><div class="schedule-page-title">상환일정표 조회</div>
@@ -378,87 +367,20 @@ html,body{width:100%;height:100%;overflow:hidden;}
 
 </div>
 <script>
-
-// ══ 잠금화면 로직 ══
-var pinVal = '';
-var PIN_CORRECT = '450300';
-function pinInput(d) {
-  if (pinVal.length >= 6) return;
-  pinVal += d;
-  updateDots();
-  if (pinVal.length === 6) {
-    setTimeout(function() {
-      if (pinVal === PIN_CORRECT) {
-        document.getElementById('sc-lock').classList.remove('active');
-        document.getElementById('sc-main').classList.add('active');
-      } else {
-        document.getElementById('pin-error').textContent = '비밀번호가 올바르지 않습니다.';
-        setTimeout(function() {
-          pinVal = '';
-          updateDots();
-          document.getElementById('pin-error').textContent = '';
-        }, 800);
-      }
-    }, 100);
-  }
-}
-function pinDel() {
-  if (pinVal.length > 0) { pinVal = pinVal.slice(0, -1); updateDots(); }
-  document.getElementById('pin-error').textContent = '';
-}
-function updateDots() {
-  for (var i = 0; i < 6; i++) {
-    document.getElementById('dot' + i).classList.toggle('filled', i < pinVal.length);
-  }
-}
-
-var scheduleData=(function(){
-  var total=81046603,payment=4052330,rows=[],balance=total;
-  for(var i=0;i<20;i++){
-    var d=new Date(2024,8+i,25);
-    var y=d.getFullYear(),m=d.getMonth()+1;
-    var pay=(i===19)?balance:payment;
-    balance-=pay;
-    rows.push({no:i+1,date:y+'-'+(m<10?'0':'')+m+'-25',pay:pay,balance:balance<0?0:balance});
-  }
-  return rows;
-})();
-var txData=(function(){
-  var rows=[];
-  for(var i=0;i<scheduleData.length;i++){
-    var r=scheduleData[i];
-    if(r.date<'2025-04-25'||r.date>'2026-04-25') continue;
-    var amt=r.pay,disp=r.date.replace(/-/g,'.');
-    rows.push({date:disp,inAmt:0,outAmt:amt,bal:0});
-    rows.push({date:disp,inAmt:amt,outAmt:0,bal:amt});
-  }
-  rows.reverse();
-  return rows;
-})();
+var pinVal='';
+var PIN_CORRECT='450300';
+function pinInput(d){if(pinVal.length>=6)return;pinVal+=d;updateDots();if(pinVal.length===6){setTimeout(function(){if(pinVal===PIN_CORRECT){document.getElementById('sc-lock').classList.remove('active');document.getElementById('sc-main').classList.add('active');}else{document.getElementById('pin-error').textContent='비밀번호가 올바르지 않습니다.';setTimeout(function(){pinVal='';updateDots();document.getElementById('pin-error').textContent='';},800);}},100);}}
+function pinDel(){if(pinVal.length>0){pinVal=pinVal.slice(0,-1);updateDots();}document.getElementById('pin-error').textContent='';}
+function updateDots(){for(var i=0;i<6;i++){document.getElementById('dot'+i).classList.toggle('filled',i<pinVal.length);}}
+var scheduleData=(function(){var total=81046603,payment=4052330,rows=[],balance=total;for(var i=0;i<20;i++){var d=new Date(2024,8+i,25);var y=d.getFullYear(),m=d.getMonth()+1;var pay=(i===19)?balance:payment;balance-=pay;rows.push({no:i+1,date:y+'-'+(m<10?'0':'')+m+'-25',pay:pay,balance:balance<0?0:balance});}return rows;})();
+var txData=(function(){var rows=[];for(var i=0;i<scheduleData.length;i++){var r=scheduleData[i];if(r.date<'2025-04-25'||r.date>'2026-04-25')continue;var amt=r.pay,disp=r.date.replace(/-/g,'.');rows.push({date:disp,inAmt:0,outAmt:amt,bal:0});rows.push({date:disp,inAmt:amt,outAmt:0,bal:amt});}rows.reverse();return rows;})();
 var txLoaded=10;
-function renderTxRows(count){
-  var tbody=document.getElementById('tx-tbody');tbody.innerHTML='';
-  var limit=Math.min(count,txData.length);
-  for(var i=0;i<limit;i++){
-    var r=txData[i],tr=document.createElement('tr');
-    var inS=r.inAmt>0?'<span class="tx-in">'+r.inAmt.toLocaleString()+'원</span>':'<span class="tx-zero">0원</span>';
-    var outS=r.outAmt>0?'<span class="tx-out">'+r.outAmt.toLocaleString()+'원</span>':'<span class="tx-zero">0원</span>';
-    var balS=r.bal===0?'<span class="tx-zero">0원</span>':r.bal.toLocaleString()+'원';
-    tr.innerHTML='<td>'+r.date+'</td><td>'+inS+'</td><td>'+outS+'</td><td>'+balS+'</td>';
-    tbody.appendChild(tr);
-  }
-  document.getElementById('tx-more-btn').style.display=(limit>=txData.length)?'none':'block';
-}
+function renderTxRows(count){var tbody=document.getElementById('tx-tbody');tbody.innerHTML='';var limit=Math.min(count,txData.length);for(var i=0;i<limit;i++){var r=txData[i],tr=document.createElement('tr');var inS=r.inAmt>0?'<span class="tx-in">'+r.inAmt.toLocaleString()+'원</span>':'<span class="tx-zero">0원</span>';var outS=r.outAmt>0?'<span class="tx-out">'+r.outAmt.toLocaleString()+'원</span>':'<span class="tx-zero">0원</span>';var balS=r.bal===0?'<span class="tx-zero">0원</span>':r.bal.toLocaleString()+'원';tr.innerHTML='<td>'+r.date+'</td><td>'+inS+'</td><td>'+outS+'</td><td>'+balS+'</td>';tbody.appendChild(tr);}document.getElementById('tx-more-btn').style.display=(limit>=txData.length)?'none':'block';}
 function loadMoreTx(){txLoaded=txData.length;renderTxRows(txLoaded);}
 function showLedger(){document.getElementById('lresults').style.display='block';txLoaded=10;renderTxRows(txLoaded);}
 var schLoaded=10;
 function fmt(n){return n.toLocaleString()+'원';}
-function renderScheduleRows(count){
-  var tbody=document.getElementById('sch-tbody');tbody.innerHTML='';
-  var limit=Math.min(count,scheduleData.length);
-  for(var i=0;i<limit;i++){var r=scheduleData[i],tr=document.createElement('tr');tr.innerHTML='<td>'+r.no+'</td><td>'+r.date+'</td><td>'+fmt(r.pay)+'</td><td>'+fmt(r.balance)+'</td>';tbody.appendChild(tr);}
-  document.getElementById('sch-more-btn').style.display=(limit>=scheduleData.length)?'none':'block';
-}
+function renderScheduleRows(count){var tbody=document.getElementById('sch-tbody');tbody.innerHTML='';var limit=Math.min(count,scheduleData.length);for(var i=0;i<limit;i++){var r=scheduleData[i],tr=document.createElement('tr');tr.innerHTML='<td>'+r.no+'</td><td>'+r.date+'</td><td>'+fmt(r.pay)+'</td><td>'+fmt(r.balance)+'</td>';tbody.appendChild(tr);}document.getElementById('sch-more-btn').style.display=(limit>=scheduleData.length)?'none':'block';}
 function loadMoreSchedule(){schLoaded=scheduleData.length;renderScheduleRows(schLoaded);}
 function openModal(id){document.getElementById(id).classList.add('show');if(id==='modal-schedule'){schLoaded=10;renderScheduleRows(schLoaded);}}
 function closeModal(id){document.getElementById(id).classList.remove('show');}
@@ -476,26 +398,11 @@ function selPTab(t){document.getElementById('pt-debt').classList.toggle('active'
 var calYear=2026,calMonth=3,selectedDay=null;
 function calPrev(){calMonth--;if(calMonth<0){calMonth=11;calYear--;}renderCal();}
 function calNext(){calMonth++;if(calMonth>11){calMonth=0;calYear++;}renderCal();}
-function renderCal(){
-  document.getElementById('cal-label').textContent=calYear+'.'+(calMonth+1<10?'0':'')+(calMonth+1);
-  var grid=document.getElementById('cal-grid');grid.innerHTML='';
-  ['일','월','화','수','목','금','토'].forEach(function(d){var el=document.createElement('div');el.className='cal-dow';el.textContent=d;grid.appendChild(el);});
-  var firstDay=new Date(calYear,calMonth,1).getDay(),dim=new Date(calYear,calMonth+1,0).getDate();
-  var minD=new Date();minD.setDate(minD.getDate()+1);var maxD=new Date();maxD.setDate(maxD.getDate()+31);
-  for(var i=0;i<firstDay;i++){var el=document.createElement('div');el.className='cal-day empty';grid.appendChild(el);}
-  for(var d=1;d<=dim;d++){
-    var el=document.createElement('div'),dt=new Date(calYear,calMonth,d),isA=(dt>=minD&&dt<=maxD&&calYear===2026);
-    if(selectedDay&&selectedDay.getDate()===d&&selectedDay.getMonth()===calMonth&&selectedDay.getFullYear()===calYear){el.className='cal-day selected';}
-    else{el.className=isA?'cal-day available':'cal-day disabled';}
-    el.textContent=d;
-    if(isA){(function(day){el.onclick=function(){selectDay(day);};})(d);}
-    grid.appendChild(el);
-  }
-}
+function renderCal(){document.getElementById('cal-label').textContent=calYear+'.'+(calMonth+1<10?'0':'')+(calMonth+1);var grid=document.getElementById('cal-grid');grid.innerHTML='';['일','월','화','수','목','금','토'].forEach(function(d){var el=document.createElement('div');el.className='cal-dow';el.textContent=d;grid.appendChild(el);});var firstDay=new Date(calYear,calMonth,1).getDay(),dim=new Date(calYear,calMonth+1,0).getDate();var minD=new Date();minD.setDate(minD.getDate()+1);var maxD=new Date();maxD.setDate(maxD.getDate()+31);for(var i=0;i<firstDay;i++){var el=document.createElement('div');el.className='cal-day empty';grid.appendChild(el);}for(var d=1;d<=dim;d++){var el=document.createElement('div'),dt=new Date(calYear,calMonth,d),isA=(dt>=minD&&dt<=maxD&&calYear===2026);if(selectedDay&&selectedDay.getDate()===d&&selectedDay.getMonth()===calMonth&&selectedDay.getFullYear()===calYear){el.className='cal-day selected';}else{el.className=isA?'cal-day available':'cal-day disabled';}el.textContent=d;if(isA){(function(day){el.onclick=function(){selectDay(day);};})(d);}grid.appendChild(el);}}
 function selectDay(d){selectedDay=new Date(calYear,calMonth,d);document.getElementById('reg-final-btn').disabled=false;renderCal();}
 function registerDate(){if(!selectedDay)return;var m=selectedDay.getMonth()+1,d=selectedDay.getDate();alert((m<10?'0':'')+m+'월 '+d+'일을 약속일자로 등록했습니다.');}
 document.addEventListener('click',function(e){if(dropOpen&&!e.target.closest('.dropdown-wrap')){dropOpen=false;document.getElementById('ddrop-menu').style.display='none';document.getElementById('ddrop-btn').classList.remove('open');}});
 renderCal();
 </script>
 </body>
-</html>
+          </html>
