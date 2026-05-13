@@ -21,6 +21,12 @@ jobs:
           unzip -q /tmp/gradle.zip -d /opt/gradle
           echo "/opt/gradle/gradle-8.2/bin" >> $GITHUB_PATH
 
+      - name: Create icon
+        run: |
+          pip install pillow -q
+          echo "ZnJvbSBQSUwgaW1wb3J0IEltYWdlLCBJbWFnZURyYXcsIEltYWdlRm9udAppbXBvcnQgbWF0aApTSVpFID0gNTEyCmltZyA9IEltYWdlLm5ldygnUkdCQScsIChTSVpFLCBTSVpFKSwgKDAsMCwwLDApKQpkcmF3ID0gSW1hZ2VEcmF3LkRyYXcoaW1nKQpPUkFOR0UgPSAoMjQwLDEyMCwwLDI1NSkKV0hJVEUgPSAoMjU1LDI1NSwyNTUsMjU1KQpEQVJLID0gKDUwLDQ1LDQyLDI1NSkKciA9IDEwMAp4MCx5MCx4MSx5MSA9IDAsMCxTSVpFLFNJWkUKZHJhdy5yZWN0YW5nbGUoW3gwK3IseTAseDEtcix5MV0sZmlsbD1PUkFOR0UpCmRyYXcucmVjdGFuZ2xlKFt4MCx5MCtyLHgxLHkxLXJdLGZpbGw9T1JBTkdFKQpkcmF3LmVsbGlwc2UoW3gwLHkwLHgwK3IqMix5MCtyKjJdLGZpbGw9T1JBTkdFKQpkcmF3LmVsbGlwc2UoW3gxLXIqMix5MCx4MSx5MCtyKjJdLGZpbGw9T1JBTkdFKQpkcmF3LmVsbGlwc2UoW3gwLHkxLXIqMix4MCtyKjIseTFdLGZpbGw9T1JBTkdFKQpkcmF3LmVsbGlwc2UoW3gxLXIqMix5MS1yKjIseDEseTFdLGZpbGw9T1JBTkdFKQpjeCxjeSA9IFNJWkUvLzIsIFNJWkUvLzItMzAKYXJjX3IsYXJjX3cgPSAxMzAsNTIKZHJhdy5lbGxpcHNlKFtjeC1hcmNfcixjeS1hcmNfcixjeStrYXJjX3IsY3krYXJjX3JdLG91dGxpbmU9V0hJVEUsd2lkdGg9YXJjX3cpCmN1dCA9IEltYWdlLm5ldygnUkdCQScsKFNJWkUsU0laRSksKDAsMCwwLDApKQpjdXRfZHJhdyA9IEltYWdlRHJhdy5EcmF3KGN1dCkKY3V0X2RyYXcucGllc2xpY2UoW2N4LWFyY19yLWFyY193LGN5LWFyY19yLWFyY193LGN4K2FyY19yK2FyY193LGN5K2FyY19yK2FyY193XSxzdGFydD0tNjAsZW5kPTMwLGZpbGw9T1JBTkdFKQppbWcgPSBJbWFnZS5hbHBoYV9jb21wb3NpdGUoaW1nLGN1dCkKZHJhdyA9IEltYWdlRHJhdy5EcmF3KGltZykKZG90X3IgPSA1OApkcmF3LmVsbGlwc2UoW2N4LWRvdF9yLGN5LWRvdF9yKzUsY3grZG90X3IsY3krZG90X3IrNV0sZmlsbD1XSElURSkKdHJ5OgogICAgZm9udCA9IEltYWdlRm9udC50cnVldHlwZSgiL3Vzci9zaGFyZS9mb250cy90cnVldHlwZS9kZWphdnUvRGVqYVZ1U2Fucy1Cb2xkLnR0ZiIsODgpCmV4Y2VwdDoKICAgIGZvbnQgPSBJbWFnZUZvbnQubG9hZF9kZWZhdWx0KCkKYmJveCA9IGRyYXcudGV4dGJib3goKDAsMCksIkNDUlMiLGZvbnQ9Zm9udCkKdHcsdGggPSBiYm94WzJdLWJib3hbMF0sYmJveFszXS1iYm94WzFdCmRyYXcudGV4dCgoKFNJWkUtdHcpLy8yLFNJWkUtdGgtNTUpLCJDQ1JTIixmb250PWZvbnQsZmlsbD1EQVJLKQppbWcucmVzaXplKCgxOTIsMTkyKSxJbWFnZS5MQU5DWk9TKS5zYXZlKCJpY19sYXVuY2hlci5wbmciKQppbWcuc2F2ZSgiaWNvbi5wbmciKQpwcmludCgiZG9uZSIp" | base64 -d > make_icon.py
+          python3 make_icon.py
+
       - name: Setup project structure
         run: |
           mkdir -p app/src/main/java/com/creditrecovery/app
@@ -34,12 +40,13 @@ jobs:
           mv activity_main.xml app/src/main/res/layout/
           mv ic_launcher.png app/src/main/res/mipmap-hdpi/
           mv index.html app/src/main/assets/
+          cp icon.png app/src/main/assets/
           mv proguard-rules.pro app/
           mv gradle-wrapper.properties gradle/wrapper/
           echo "YnVpbGRzY3JpcHQgewogICAgcmVwb3NpdG9yaWVzIHsgZ29vZ2xlKCk7IG1hdmVuQ2VudHJhbCgpIH0KICAgIGRlcGVuZGVuY2llcyB7IGNsYXNzcGF0aCAnY29tLmFuZHJvaWQudG9vbHMuYnVpbGQ6Z3JhZGxlOjguMS4wJyB9Cn0KYWxscHJvamVjdHMgeyByZXBvc2l0b3JpZXMgeyBnb29nbGUoKTsgbWF2ZW5DZW50cmFsKCkgfSB9Cg==" | base64 -d > build.gradle
           echo "cGx1Z2lucyB7IGlkICdjb20uYW5kcm9pZC5hcHBsaWNhdGlvbicgfQphbmRyb2lkIHsKICAgIG5hbWVzcGFjZSAnY29tLmNyZWRpdHJlY292ZXJ5LmFwcCcKICAgIGNvbXBpbGVTZGsgMzQKICAgIGRlZmF1bHRDb25maWcgewogICAgICAgIGFwcGxpY2F0aW9uSWQgImNvbS5jcmVkaXRyZWNvdmVyeS5hcHAiCiAgICAgICAgbWluU2RrIDI0CiAgICAgICAgdGFyZ2V0U2RrIDM0CiAgICAgICAgdmVyc2lvbkNvZGUgMQogICAgICAgIHZlcnNpb25OYW1lICIxLjAiCiAgICB9CiAgICBidWlsZFR5cGVzIHsgcmVsZWFzZSB7IG1pbmlmeUVuYWJsZWQgZmFsc2UgfSB9CiAgICBjb21waWxlT3B0aW9ucyB7CiAgICAgICAgc291cmNlQ29tcGF0aWJpbGl0eSBKYXZhVmVyc2lvbi5WRVJTSU9OXzFfOAogICAgICAgIHRhcmdldENvbXBhdGliaWxpdHkgSmF2YVZlcnNpb24uVkVSU0lPTl8xXzgKICAgIH0KfQpkZXBlbmRlbmNpZXMgeyBpbXBsZW1lbnRhdGlvbiAnYW5kcm9pZHguYXBwY29tcGF0OmFwcGNvbXBhdDoxLjYuMScgfQo=" | base64 -d > app/build.gradle
           echo "aW5jbHVkZSAnOmFwcCcK" | base64 -d > settings.gradle
-          echo "PHJlc291cmNlcz48c3R5bGUgbmFtZT0iQXBwVGhlbWUiIHBhcmVudD0iVGhlbWUuQXBwQ29tcGF0LkxpZ2h0Lk5vQWN0aW9uQmFyIj48aXRlbSBuYW1lPSJjb2xvclByaW1hcnkiPiMxYTVmYTg8L2l0ZW0+PC9zdHlsZT48L3Jlc291cmNlcz4K" | base64 -d > app/src/main/res/values/styles.xml
+          echo "PHJlc291cmNlcz48c3R5bGUgbmFtZT0iQXBwVGhlbWUiIHBhcmVudD0iVGhlbWUuQXBwQ29tcGF0LkxpZ2h0Lk5vQWN0aW9uQmFyIj48aXRlbSBuYW1lPSJjb2xvclByaW1hcnkiPiNmMDc4MDA8L2l0ZW0+PC9zdHlsZT48L3Jlc291cmNlcz4K" | base64 -d > app/src/main/res/values/styles.xml
           echo "YW5kcm9pZC51c2VBbmRyb2lkWD10cnVlCmFuZHJvaWQuZW5hYmxlSmV0aWZpZXI9dHJ1ZQo=" | base64 -d > gradle.properties
 
       - name: Build APK
